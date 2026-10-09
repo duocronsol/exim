@@ -200,4 +200,4 @@ doc_events = {
 }
 
 # Frappe v16 Apps desktop entry; Dock/Sidebar provide module navigation.
-add_to_apps_screen = [{"name": "exim", "title": "Exim", "route": "/desk/advance-authorisation-license"}]
+add_to_apps_screen = [{"logo": "/assets/exim/images/duocron-app-icon.svg", "name": "exim", "title": "Exim", "route": "/desk/advance-authorisation-license"}]
