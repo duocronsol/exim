@@ -198,3 +198,6 @@ doc_events = {
         "validate": "exim.exim.doc_events.igst_calculation.cal_igst"
     },
 }
+
+# Frappe v16 Apps desktop entry; Dock/Sidebar provide module navigation.
+add_to_apps_screen = [{"name": "exim", "title": "Exim", "route": "/desk/advance-authorisation-license"}]
