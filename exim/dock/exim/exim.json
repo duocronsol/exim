@@ -1,0 +1,17 @@
+{
+ "app": "exim",
+ "doctype": "Dock",
+ "name": "exim",
+ "user": "",
+ "standard": 1,
+ "items": [
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "layers",
+   "link_to": "Exim",
+   "link_type": "Sidebar",
+   "title": "Exim"
+  }
+ ]
+}
