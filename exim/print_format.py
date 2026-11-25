@@ -5,7 +5,7 @@ import tempfile
 
 import frappe
 import pdfkit
-from PyPDF2 import PdfFileReader
+from pypdf import PdfReader
 
 from frappe import _
 from frappe.utils import scrub_urls
@@ -32,8 +32,7 @@ SAFE_PDFKIT_OPTIONS = {
 
 def append_pdf(input, output):
 	# Merging multiple pdf files
-	for page_num in range(input.numPages):
-		output.addPage(input.getPage(page_num))
+	output.append_pages_from_reader(input)
 
 
 @frappe.whitelist()
@@ -84,7 +83,7 @@ def get_pdf(html, options=None, output=None):
 
 		if output:
 			with open(fname, "rb") as pdf_file:  # nosec B108
-				append_pdf(PdfFileReader(pdf_file), output)
+				append_pdf(PdfReader(pdf_file), output)
 		else:
 			with open(fname, "rb") as pdf_file:  # nosec B108
 				filedata = pdf_file.read()
