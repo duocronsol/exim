@@ -485,7 +485,7 @@ def create_jv(self):
 				self.db_set("meis_jv", meis_jv.name)
 
 def create_brc(self):
-	if frappe.db.get_value('Address', self.customer_address, 'country') != "India" and frappe.db.exists("DocType", "BRC Management"):
+	if not self.is_consolidated and frappe.db.get_value('Address', self.customer_address, 'country') != "India" and frappe.db.exists("DocType", "BRC Management"):
 		brc = frappe.new_doc("BRC Management")
 		brc.invoice_no = self.name
 		if not self.is_return and self.shipping_bill_number and self.shipping_bill_date and self.rounded_total:
